@@ -4,6 +4,7 @@ main(){
   IMG=builder-home
   HOUSE="$(pwd)/home"
   docker build -t "$IMG" \
+    --build-arg USER="$(id -un)" --build-arg GROUP="$(id -gn)" \
     --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" \
     --build-arg WORKDIR="$HOUSE" --build-arg HOME="$HOUSE" \
     .
