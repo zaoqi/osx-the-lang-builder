@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 main(){
-  IMG=builder-home
+  IMG=local_host/builder-home
   HOUSE="$(pwd)/home"
   docker build -t "$IMG" \
     --build-arg USER="$(id -un)" --build-arg GROUP="$(id -gn)" \
