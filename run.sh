@@ -9,7 +9,8 @@ main(){
     --build-arg WORKDIR="$HOUSE" --build-arg HOME="$HOUSE" \
     .
   hidden_v=""
-  hidden_tmp="$(pwd)/.tmp$RANDOM$RANDOM"
+  hidden_tmp="$(pwd)/.teMpFoRHiDeDoTgIt"
+  rm -fr "$hidden_tmp"
   mkdir "$hidden_tmp"
   for hidden in "$HOUSE"/src/*/.git; do
     [ -e "$hidden" ] && hidden_v="$hidden_v -v $hidden_tmp:$hidden:ro"
